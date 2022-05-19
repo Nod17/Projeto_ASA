@@ -5,7 +5,7 @@ criação de container com Docker. Utilizaremos do git para incluir modificaçõ
 
 PROPOSTA:
 
-Site de hospedagem de sites, onde faremos um apontamento/direcionamento para o real site que o cliente do cliente deseja acessar
+Site de hospedagem de sites, onde faremos um apontamento/direcionamento para o real site que o cliente do cliente deseja acessar.
 Nosso site deverá ter a inclusão de sites e entrega de endereço para cliente
 
 Confere?
