@@ -17,7 +17,7 @@ Dicas:
 
 - Após dar o git clone ou git pull para ter este repositório, faça:
     - docker build -t "nome_para_imagem" .
-    - docker run --name "nome_para_container" -itd "nome_da_imagem"
+    - docker run --name "nome_para_container" -d -p 30053:53 "nome_da_imagem"
     - docker exec -it "nome_container" /bin/bash
 
     - Dessa forma dá pra acessar o temrinal do ubuntu/container sendo um Linux mesmo, aí a gente pode atualiza-lo e dentro do /etc vai ter o bind, onde temos que fazer as configurações
