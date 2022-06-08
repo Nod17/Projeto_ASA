@@ -26,4 +26,5 @@ SOBRE A AULA DO DIA 07/06/2022:
 
 - Configurar arquivos para o DNS, de acordo com o nosso domínio (ac.asa.br)
 - Usar o bind9 para isso, a imagem de acordo com o Dockerfile
-- Configurar o nosso Dockerfile para executar tudo automaticamente na hora do build, faltando apenas subir
+- Configurar o nosso Dockerfile para executar tudo automaticamente na hora do build, faltando apenas subir o container
+- Obs: Ainda está incompleto
