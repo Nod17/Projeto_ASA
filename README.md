@@ -9,7 +9,7 @@ PROPOSTA:
 Queria que a gente visse direitinho como vai ser...
 
 
-Sobre a aula do dia 31/05:
+SOBRE A AULA DO DIA 31/05:
 
 Estou adicionando aqui um arquivo "Dockerfile" com a configuração para uma imagem que podemos usar para nosso projeto e fazer configurações de DNS com o bind9.
 
@@ -21,3 +21,9 @@ Dicas:
     - docker exec -it "nome_container" /bin/bash
 
     - Dessa forma dá pra acessar o temrinal do ubuntu/container sendo um Linux mesmo, aí a gente pode atualiza-lo e dentro do /etc vai ter o bind, onde temos que fazer as configurações
+
+SOBRE A AULA DO DIA 07/06/2022:
+
+- Configurar arquivos para o DNS, de acordo com o nosso domínio (ac.asa.br)
+- Usar o bind9 para isso, a imagem de acordo com o Dockerfile
+- Configurar o nosso Dockerfile para executar tudo automaticamente na hora do build, faltando apenas subir
