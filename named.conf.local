@@ -10,12 +10,12 @@
 
 zone "ac.asa.br" {
         type master;
-        file "/etc/bind/db.direta.";
+        file "/etc/bind/db.direta";
 };
 
 // Zona de pesquisa reversa
 
 zone "192.in-addr.arpa" {
         type master;
-        file "/etc/bind/db.reversa.";
+        file "/etc/bind/db.indireta";
 };
