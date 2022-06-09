@@ -1,5 +1,7 @@
 # Projeto_ASA
 
+** OBS: Para nós contruibuidores, sempre dê um "git pull" antes de modificar, criar, mudar algo. Pois o outro pode ter feito modifcações antes de você.
+
 Repositório onde vamos incluir arquivos de configuração e utilização para
 criação de containers com o Docker. Utilizaremos do git no terminal, para incluir modificações, criações, etc...
 
