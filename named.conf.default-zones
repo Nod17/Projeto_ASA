@@ -17,11 +17,26 @@ zone "localhost" {
 	file "/etc/bind/db.local";
 };
 
-zone "example.com" { // Change to desired zone
+zone "127.in-addr.arpa" {
 	type master;
-	file "/etc/bind/db.direta";	// Change to zone file path
-	allow-transfer {192.168.0.26; };		// Change to Secondary DNS IP
+	file "/etc/bind/db.127";
+};
+
+zone "0.in-addr.arpa" {
+	type master;
+	file "/etc/bind/db.0";
+};
+
+zone "255.in-addr.arpa" {
+	type master;
+	file "/etc/bind/db.255";
+};
+
+//zone "ac.asa.br" { // Change to desired zone
+//	type master;
+//	file "/etc/bind/db.direto";	// Change to zone file path
+//	allow-transfer {192.168.0.26; };		// Change to Secondary DNS IP
 //	allow-update {
 //          key "ac.asa.br";
 //  };
-};
+//};
