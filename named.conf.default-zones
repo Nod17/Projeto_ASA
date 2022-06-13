@@ -35,7 +35,7 @@ zone "255.in-addr.arpa" {
 //zone "ac.asa.br" { // Change to desired zone
 //	type master;
 //	file "/etc/bind/db.direto";	// Change to zone file path
-//	allow-transfer {192.168.0.26; };		// Change to Secondary DNS IP
+//	allow-transfer {...; };		// Change to Secondary DNS IP
 //	allow-update {
 //          key "ac.asa.br";
 //  };

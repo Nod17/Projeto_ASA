@@ -15,7 +15,7 @@ zone "ac.asa.br" {
 
 // Zona de pesquisa reversa
 
-zone "192.in-addr.arpa" {
+zone "172.in-addr.arpa" {
         type master;
         file "/etc/bind/db.indireto";
 };
