@@ -11,7 +11,6 @@ $TTL	604800
 ;
 @	IN	NS	ac.asa.br.
 @	IN	NS	ac.asa.br.
-pegasus	IN	A	192.168.0.13
 @	IN	A	127.0.0.1
 @	IN	AAAA	::1
 
