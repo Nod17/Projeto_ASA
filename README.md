@@ -30,3 +30,10 @@ SOBRE A AULA DO DIA 07/06/2022:
 - Usar o bind9 para isso, a imagem de acordo com o Dockerfile
 - Configurar o nosso Dockerfile para executar tudo automaticamente na hora do build, faltando apenas subir o container
 - Obs: Ainda está incompleto
+
+SOBRE A AULA DO DIA 14/06/2022:
+
+- Aprimoramento de configurações dos DNS e melhor entendimento sobre o mesmo
+- Melhor configuração do Dockerfile
+- Tentativas de testes do DNS com outro container usando nginx para uma página HTML
+- Obs: Ainda está incompleto. Não funciona!

@@ -1,4 +1,4 @@
-//key "example.com" {
+//key "ac.asa.br" {
 //	algorithm hmac-md5;
 //	secret "BD077oHTdwm6Kwm4pc5tBkrX6EW3RErIOIESKpIKP6vQHAPRYp+9ubig Fvl3gYuuib+DQ8+eCpHEe/rIy9tiIg==";
 //};
@@ -32,11 +32,11 @@ zone "255.in-addr.arpa" {
 	file "/etc/bind/db.255";
 };
 
-//zone "ac.asa.br" { // Change to desired zone
-//	type master;
-//	file "/etc/bind/db.direto";	// Change to zone file path
-//	allow-transfer {...; };		// Change to Secondary DNS IP
+zone "ac.asa.br" { // Change to desired zone
+	type master;
+	file "/etc/bind/db.ac.asa.br";	// Change to zone file path
+//	allow-transfer {IP Secondary; };		// Change to Secondary DNS IP
 //	allow-update {
 //          key "ac.asa.br";
 //  };
-//};
+};
