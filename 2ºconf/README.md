@@ -1,4 +1,4 @@
-#Outra configuração para o Bind9
+# Outra configuração para o Bind9
 
 - Ainda sim, incompleta e não funciona de externamente para internamente do container
 
