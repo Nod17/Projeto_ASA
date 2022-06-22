@@ -6,3 +6,5 @@
 
 - Inclusive no momento estou usando este container como DNS e acessando sites e o próprio domínio definido
 - Vou subir para o repositório usando ele hehehe
+
+- Este teste basicamente foi o que levou a conclusão de funcionalidade do DNS_Segunda_Conf_Melhor

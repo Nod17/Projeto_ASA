@@ -45,6 +45,6 @@ SOBRE A AULA DO DIA 21/06/2022:
 - Modificações nos arquivos e reorganização do repositório no GitHub
 - Dessa vez é possível usar de forma válida o DNS, apenas primário (único) por enquanto
 - Entre outros detalhes
-    * Comandos:
+    * Comandos gerais para funcionar com basicamente qualquer vertente do nosso repositório:
     * docker build -t "nome-para-imagem" .
     * docker run --name "nome-para-container" -d -p 0.0.0.0:53:53/udp -p 0.0.0.0:53:53/tcp --dns "IP-referente" "nome-dada-a-imagem"

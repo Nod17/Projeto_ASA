@@ -33,7 +33,7 @@ zone "255.in-addr.arpa" {
 };
 
 zone "ac.asa.br" { // Change to desired zone
-	type master;
-	file "/etc/bind/db.ac.asa.br";	// Change to zone file path
-//	allow-transfer {IP Secondary; };		// Change to Secondary DNS IP
+	type slave;
+	file "/etc/bind/db.ac.asa.br";
+	masters {172.17.0.2;};
 };
