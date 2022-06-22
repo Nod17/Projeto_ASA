@@ -1,6 +1,6 @@
 # Projeto_ASA
 
-** OBS: Para nós contruibuidores, sempre dê um "git pull" antes de modificar, criar, mudar algo. Pois o outro pode ter feito modifcações antes de você.
+--- OBS: Para nós contruibuidores, sempre dê um "git pull" antes de modificar, criar, mudar algo. Pois o outro pode ter feito modifcações antes de você.
 
 Repositório onde vamos incluir arquivos de configuração e utilização para
 criação de containers com o Docker. Utilizaremos do git no terminal, para incluir modificações, criações, etc...
@@ -45,5 +45,5 @@ SOBRE A AULA DO DIA 21/06/2022:
 - Modificações nos arquivos e reorganização do repositório no GitHub
 - Dessa vez é possível usar de forma válida o DNS, apenas primário (único) por enquanto
 - Entre outros detalhes
-    * Comandos *
+    * Comandos:
     * 
