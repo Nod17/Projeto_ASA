@@ -37,3 +37,13 @@ SOBRE A AULA DO DIA 14/06/2022:
 - Melhor configuração do Dockerfile
 - Tentativas de testes do DNS com outro container usando nginx para uma página HTML
 - Obs: Ainda está incompleto. Não funciona!
+
+SOBRE A AULA DO DIA 21/06/2022:
+
+- Aprimoramento de configurações dos DNS e melhor entendimento sobre o mesmo
+- Melhor configuração do Dockerfile
+- Modificações nos arquivos e reorganização do repositório no GitHub
+- Dessa vez é possível usar de forma válida o DNS, apenas primário (único) por enquanto
+- Entre outros detalhes
+    * Comandos *
+    * 
