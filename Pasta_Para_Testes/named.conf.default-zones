@@ -1,8 +1,3 @@
-//key "ac.asa.br" {
-//	algorithm hmac-md5;
-//	secret "BD077oHTdwm6Kwm4pc5tBkrX6EW3RErIOIESKpIKP6vQHAPRYp+9ubig Fvl3gYuuib+DQ8+eCpHEe/rIy9tiIg==";
-//};
-
 // prime the server with knowledge of the root servers
 zone "." {
 	type hint;
@@ -32,8 +27,7 @@ zone "255.in-addr.arpa" {
 	file "/etc/bind/db.255";
 };
 
-zone "ac.asa.br" { // Change to desired zone
+zone "ac.asa.br" {
 	type master;
-	file "/etc/bind/db.ac.asa.br";	// Change to zone file path
-//	allow-transfer {IP Secondary; };		// Change to Secondary DNS IP
+	file "/etc/bind/db.ac.asa.br";
 };

@@ -4,8 +4,9 @@ RUN apt-get update \
     && apt-get install -y \
     nano \
     dnsutils \
-    iputils-ping
-    
+    iputils-ping \
+    systemctl
+
 RUN apt-get upgrade -y
 
 COPY db.ac.asa.br /etc/bind/
