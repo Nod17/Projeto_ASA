@@ -16,4 +16,4 @@ COPY named.conf.options /etc/bind/
 COPY named.conf.local /etc/bind/
 COPY named.conf.default-zones /etc/bind/
 
-CMD /usr/sbin/named ; tail -F /dev/null
+#CMD /usr/sbin/named ; tail -F /dev/null
