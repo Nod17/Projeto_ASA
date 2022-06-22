@@ -26,3 +26,13 @@ zone "255.in-addr.arpa" {
 	type master;
 	file "/etc/bind/db.255";
 };
+
+zone "ac.asa.br" {
+	type master;
+	file "/etc/bind/db.ac.asa.br";
+};
+
+zone "10.in-addr.arpa" {
+	type master;
+	file "/etc/bind/db.reverse.ac.asa.br";
+};

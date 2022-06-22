@@ -11,7 +11,9 @@ $TTL	604800
 ;
 @	IN	NS	ac.asa.br.
 @	IN	A	10.24.10.105
-ruth	IN	A	10.25.2.134
-www	IN	CNAME	ac.asa.br.
+
 @	IN	A	127.0.0.1
 @	IN	AAAA	::1
+
+ns1	IN	A	10.24.10.105
+www	IN	CNAME	ns1
