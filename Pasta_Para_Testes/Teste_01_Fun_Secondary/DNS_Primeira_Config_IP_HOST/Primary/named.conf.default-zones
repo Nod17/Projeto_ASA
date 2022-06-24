@@ -30,4 +30,10 @@ zone "255.in-addr.arpa" {
 zone "ac.asa.br" {
 	type master;
 	file "/etc/bind/db.ac.asa.br";
+	allow-transfer {127.0.0.1; };
+};
+
+zone "192.in-addr.arpa" {
+	type master;
+	file "/etc/bind/db.reverse.ac.asa.br";
 };
