@@ -10,4 +10,4 @@ $TTL    604800
                          604800 )       ; Negative Cache TTL
 ;
 @       IN      NS      ac.asa.br.
-12.0.168        IN      PTR     ac.asa.br.
+105.10.24        IN      PTR     ac.asa.br.
