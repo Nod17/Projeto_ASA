@@ -3,17 +3,16 @@
 ;
 $TTL	604800
 @	IN	SOA	ac.asa.br. root.ac.asa.br. (
-			      3		; Serial
+			      1		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
 			 604800 )	; Negative Cache TTL
 ;
-@	IN	NS	ac.asa.br.
-@	IN	A	10.24.10.105
+@	IN	NS	ns1.ac.asa.br.
 
 @	IN	A	127.0.0.1
 @	IN	AAAA	::1
 
-ns1	IN	A	10.24.10.105
-www	IN	CNAME	ns1
+ns1			A	primary
+ns2			A	secondary

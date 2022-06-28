@@ -1,3 +1,8 @@
+//key "example.com" {
+//	algorithm hmac-md5;
+//	secret "BD077oHTdwm6Kwm4pc5tBkrX6EW3RErIOIESKpIKP6vQHAPRYp+9ubig Fvl3gYuuib+DQ8+eCpHEe/rIy9tiIg==";
+//};
+
 // prime the server with knowledge of the root servers
 zone "." {
 	type hint;
@@ -12,17 +17,8 @@ zone "localhost" {
 	file "/etc/bind/db.local";
 };
 
-zone "127.in-addr.arpa" {
+zone "ac.asa.br" {
 	type master;
-	file "/etc/bind/db.127";
-};
-
-zone "0.in-addr.arpa" {
-	type master;
-	file "/etc/bind/db.0";
-};
-
-zone "255.in-addr.arpa" {
-	type master;
-	file "/etc/bind/db.255";
+	file "/etc/bind/db.ac.asa.br";
+	allow-transfer {secondary; };
 };
