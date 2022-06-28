@@ -48,3 +48,9 @@ SOBRE A AULA DO DIA 21/06/2022:
     * Comandos gerais para funcionar com basicamente qualquer vertente do nosso repositório:
     * docker build -t "nome-para-imagem" .
     * docker run --name "nome-para-container" -d -p 0.0.0.0:53:53/udp -p 0.0.0.0:53:53/tcp --dns "IP-referente" "nome-dada-a-imagem"
+
+DIA 21/06 ao 28/06/2022 ANTES DA AULA:
+
+- Criadas branchs com diferentes processos. Modificações e updates.
+- Agora temos uma automatização no momento de levantar os DNSs.
+* A problemática é que os DNSs ainda não se conversam no momento...
