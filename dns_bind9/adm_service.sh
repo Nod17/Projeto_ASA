@@ -74,12 +74,16 @@ while test $op != 0; do
 			echo "Invalid Option"
 		esac;;
 	5)
+		echo "Name dns>" ; read ns
+		docker exec $ns named -g;;
+
+	6)
 		echo "Name of container> " ; read name
 		docker inspect $name;;
-	6)
+	7)
 		echo "Name of image> " ; read named
 		docker rmi -f $named;;
-	7)
+	8)
 		docker volume prune -f;;
 
 	*)

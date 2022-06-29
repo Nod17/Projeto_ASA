@@ -11,7 +11,7 @@ else
 		cd secondary
 		wrk2=$(pwd)
        		sed -i "s/primary/$1/" named.conf.default-zones
-		docker run -d --name ns2 --hostname dns-ns2 -v -p $2:53:53/udp -p $2:53:53/tcp "$wrk2"/:/etc/bind --dns $2 ubuntu
+		docker run -d --name ns2 --hostname dns-ns2 -p $2:53:53/udp -p $2:53:53/tcp -v "$wrk2"/:/etc/bind --dns $2 ubuntu
 		echo "Name container to dns secondary => ns2"
 	fi
 fi
