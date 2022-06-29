@@ -54,3 +54,9 @@ DIA 21/06 ao 28/06/2022 ANTES DA AULA:
 - Criadas branchs com diferentes processos. Modificações e updates.
 - Agora temos uma automatização no momento de levantar os DNSs.
 * A problemática é que os DNSs ainda não se conversam no momento...
+
+
+SOBRE A AULA DO DIA 28/06/2022:
+
+- Melhorias nos scripts de automatização
+** Obs: Dependendo da situação, os scripts necessitam mudar a forma do S.O. ler. O Shell fica como LF, por exemplo lá em baixo no VsCode. Quando der um git clone, provavelmente ele vai vir em CRLF, que é a forma de espaçamento do Windows. Basta modificar este parâmetro e ele deve executar. Eu uso WSL.
