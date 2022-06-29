@@ -9,6 +9,6 @@ RUN apt-get update \
     iputils-ping \
     nano
 
-#RUN apt-get upgrade -y
+RUN apt-get upgrade -y
 
 CMD /usr/sbin/named ; tail -F /dev/null

@@ -15,5 +15,5 @@ zone "localhost" {
 zone "ac.asa.br" {
 	type slave;
 	file "/etc/bind/db.ac.asa.br";
-	masters {primary;};
+	masters {primary; };
 };
