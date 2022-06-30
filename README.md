@@ -1,62 +1,16 @@
 # Projeto_ASA
 
---- OBS: Para nós contruibuidores, sempre dê um "git pull" antes de modificar, criar, mudar algo. Pois o outro pode ter feito modifcações antes de você.
+OBS: Para quem deu um git clone anteriormente, use "git pull" antes de modificar, criar, mudar algo. Pois haver modifcações.
 
-Repositório onde vamos incluir arquivos de configuração e utilização para
-criação de containers com o Docker. Utilizaremos do git no terminal, para incluir modificações, criações, etc...
+FINALIDADE:
+    Repositório onde vamos incluir arquivos de configuração e utilização para criação de containers com o Docker, pela disciplina ASA.
 
+BIND9:
+- Atualmente no processo do projeto, temos apenas um dns primário com docker funcionando perfeitamente e um secundário que está aprensentando "REFUSED" ao contatar o primário. 
 
-PROPOSTA:
+- Para contruir tal imagem e tal container, foram criados scripts em Shell, automatizando o processo, desde o build à execução do container
+    - Basta que no momento de chamada do script, utilize como $1 o IP para o primário, ou seja, o do host e como $2 o IP do secundário,
+      ou seja, o IP do host que vai executar o secundário.
 
-Queria que a gente visse direitinho como vai ser...
-
-
-SOBRE A AULA DO DIA 31/05:
-
-Estou adicionando aqui um arquivo "Dockerfile" com a configuração para uma imagem que podemos usar para nosso projeto e fazer configurações de DNS com o bind9.
-
-Dicas:
-
-- Após dar o git clone ou git pull para ter este repositório, faça:
-    - docker build -t "nome_para_imagem" .
-    - docker run --name "nome_para_container" -d -p 30053:53 "nome_da_imagem"
-    - docker exec -it "nome_container" /bin/bash
-
-    - Dessa forma dá pra acessar o temrinal do ubuntu/container sendo um Linux mesmo, aí a gente pode atualiza-lo e dentro do /etc vai ter o bind, onde temos que fazer as configurações
-
-SOBRE A AULA DO DIA 07/06/2022:
-
-- Configurar arquivos para o DNS, de acordo com o nosso domínio (ac.asa.br)
-- Usar o bind9 para isso, a imagem de acordo com o Dockerfile
-- Configurar o nosso Dockerfile para executar tudo automaticamente na hora do build, faltando apenas subir o container
-- Obs: Ainda está incompleto
-
-SOBRE A AULA DO DIA 14/06/2022:
-
-- Aprimoramento de configurações dos DNS e melhor entendimento sobre o mesmo
-- Melhor configuração do Dockerfile
-- Tentativas de testes do DNS com outro container usando nginx para uma página HTML
-- Obs: Ainda está incompleto. Não funciona!
-
-SOBRE A AULA DO DIA 21/06/2022:
-
-- Aprimoramento de configurações dos DNS e melhor entendimento sobre o mesmo
-- Melhor configuração do Dockerfile
-- Modificações nos arquivos e reorganização do repositório no GitHub
-- Dessa vez é possível usar de forma válida o DNS, apenas primário (único) por enquanto
-- Entre outros detalhes
-    * Comandos gerais para funcionar com basicamente qualquer vertente do nosso repositório:
-    * docker build -t "nome-para-imagem" .
-    * docker run --name "nome-para-container" -d -p 0.0.0.0:53:53/udp -p 0.0.0.0:53:53/tcp --dns "IP-referente" "nome-dada-a-imagem"
-
-DIA 21/06 ao 28/06/2022 ANTES DA AULA:
-
-- Criadas branchs com diferentes processos. Modificações e updates.
-- Agora temos uma automatização no momento de levantar os DNSs.
-* A problemática é que os DNSs ainda não se conversam no momento...
-
-
-SOBRE A AULA DO DIA 28/06/2022:
-
-- Melhorias nos scripts de automatização
-** Obs: Dependendo da situação, os scripts necessitam mudar a forma do S.O. ler. O Shell fica como LF, por exemplo lá em baixo no VsCode. Quando der um git clone, provavelmente ele vai vir em CRLF, que é a forma de espaçamento do Windows. Basta modificar este parâmetro e ele deve executar. Eu uso WSL.
+HTML:
+- Há uma pasta com html simples, apenas para ter os resultados apresentados no README.md daquela pasta.
