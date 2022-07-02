@@ -23,7 +23,7 @@ Exemplos:
 
 ./exec_service_general.sh 192.168.0.10 127.0.0.1
 ```
-
+---
 #### Ambiente para host primário
 
 O script __*exec_service_primary.sh*__ será usado para execução do dns primário, onde se levantará um container para o dns.
@@ -35,7 +35,7 @@ Exemplo:
 ```shell
 ./exec_service_primary.sh 192.168.0.10 192.168.0.11
 ```
-
+---
 #### Ambiente para host secundário
 
 O script __*exec_service_secondary.sh*__ será usado para execução do dns secundário, onde se levantará um container para o dns, que terá de fazer uma busca de dados no dns primário. Só é útil executá-lo após o primário ter sido executado.
@@ -47,7 +47,7 @@ Exemplo:
 ```shell
 ./exec_service_secondary.sh 192.168.0.10 192.168.0.11
 ```
-
+---
 #### Ambiente independente do host
 
 O script __*adm_service.sh*__ é útil para administração dos containers, especialmente voltado aos dos dns, ns1 e ns2. Ele traz algumas funcionalidades que agiliza principalmente nos momentos dos testes e, você pode executá-lo tanto no host do primário como no host do secunário.
