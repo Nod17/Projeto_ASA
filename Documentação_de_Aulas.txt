@@ -53,4 +53,7 @@ DIA 21/06 ao 28/06/2022 ANTES DA AULA:
 SOBRE A AULA DO DIA 28/06/2022:
 
 - Melhorias nos scripts de automatização
-** Obs: Dependendo da situação, os scripts necessitam mudar a forma do S.O. ler. O Shell fica como LF, por exemplo lá em baixo no VsCode. Quando der um git clone, provavelmente ele vai vir em CRLF, que é a forma de espaçamento do Windows. Basta modificar este parâmetro e ele deve executar. Eu uso WSL.
+
+**Obs: Dependendo da situação, os scripts necessitam mudar a forma do S.O. ler. O Shell tem que ficar como LF, por exemplo lá em baixo no VsCode.
+Quando der um git clone, provavelmente ele vai vir em CRLF, que é a forma de espaçamento do Windows.
+Basta modificar este parâmetro e ele deve executar, em um Linux. Eu uso WSL com a distro Debian.
