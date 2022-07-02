@@ -1,16 +1,31 @@
-# Projeto_ASA
+# Projeto_ASA_IFRN  :desktop_computer:
 
-OBS: Para quem deu um git clone anteriormente, use "git pull" antes de modificar, criar, mudar algo. Pois haver modifcações.
+### Finalidade:
 
-FINALIDADE:
-    Repositório onde vamos incluir arquivos de configuração e utilização para criação de containers com o Docker, pela disciplina ASA.
+Repositório onde vamos armazenar o necessário para o projeto da disciplina ASA, como arquivos de configuração, scripts de automatização, programas etc. Tudo isso para o desenvolvimento de um serviço usando containers Docker.
 
-BIND9:
-- Atualmente no processo do projeto, temos apenas um dns primário com docker funcionando perfeitamente e um secundário que está aprensentando "REFUSED" ao contatar o primário. 
+###### Para obter o repositório na sua máquina:
 
-- Para contruir tal imagem e tal container, foram criados scripts em Shell, automatizando o processo, desde o build à execução do container
-    - Basta que no momento de chamada do script, utilize como $1 o IP para o primário, ou seja, o do host e como $2 o IP do secundário,
-      ou seja, o IP do host que vai executar o secundário.
+```shell
+git clone https://github.com/Nod17/Projeto_ASA.git
 
-HTML:
-- Há uma pasta com html simples, apenas para ter os resultados apresentados no README.md daquela pasta.
+cd Projeto_ASA
+
+ls ou dir 
+```
+
+___Dicas:___
+
+1. Só é possível efetuar esta primeira funcionalidade se tiver instalado o *git* na máquina.
+
+2. Sempre que for executar um script, ou usar o *docker*, esteja na pasta principal do que deseja.
+
+---
+
+#### DNS - BIND9:
+
+- Atualmente no processo do projeto, estamos usando o bind9 como servidor dns. Siga até a pasta __dns_bind9__ para visualizar o README.md especificamente sobre ele. Nosso domínio é o *ac.asa.br*, o qual está dentro do *asa.br* referente ao projeto do link a seguir: https://github.com/CostaPauloEdu/dns-bind9
+
+#### HTML - NGINX:
+
+- No momento temos uma pasta ___html___ com a finalidade principal de usarmos para testar o dns, relacionando o IP do host hospedeiro que o subiu, com um nome dentro do domínio. Siga até ela para mais detalhes.

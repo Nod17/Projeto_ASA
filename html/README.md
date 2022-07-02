@@ -1,10 +1,17 @@
-# TestesDocker
+## HTML - NGINX  :bookmark_tabs:
 
-- Nesta pasta, há outra pasta com um HTML básico, que tem instruções, dicas, orientações básicas para o usar o docker.
-    Servindo mais para subir rápidamente, testando o dns.
+Para esta pasta há apenas um Dockerfile, um simples html e um simples css.
 
-- Resumidamente, usa-se uma imagem a ser construída da nginx, por meio de um Dockerfile.
-    - Logo em seguida é possível subir um container e obter o resultado desejado.
-    - Acesse a página pelo navegador na porta que foi definida e visualize as dicas.
-    - Para teste do dns, adicione um nome ao IP do host ou use o próprio hospedeiro,
-           suba ele e acesse pelo nome referente ao IP, no db.ac.asa.br 
+Siga os passos destacados abaixo e suba o container:
+
+```shell
+docker build -t nx .
+
+docker run -d -p 80:80 nx
+```
+
+E pronto, com isso você já subiu um container a partir de uma determinada imagem construída com o nome _nx_.
+
+Ele estará executando na porta 80, ou seja, a padrão do navegador para o protocolo HTTP.
+
+É possível acessa-lo digitando _localhost_ no navegador do host hospedeiro, ou _127.0.0.1_ ou o _IP_ do mesmo.

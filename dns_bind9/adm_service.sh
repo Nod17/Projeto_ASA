@@ -5,7 +5,16 @@ while test $op != 0; do
 	echo "------------------------------------------------------"
 	echo "-------------------- Admin Docker --------------------"
 	echo "------------------------------------------------------"
-	cat text_admin.txt
+	echo "0 - Stop script"
+	echo "1 - List Containers in execution"
+	echo "2 - List All Containers"
+	echo "3 - Stop, Restart, Start bind9 in ns1 and/or ns2 with <exec>"
+	echo "4 - Delete container ns1 and/or ns2"
+	echo "5 - View Logs ns1 or ns2"
+	echo "6 - Inspect Container"
+	echo "7 - Delete image"
+	echo "8 - Delete volumes not in use"
+	echo "9 - Delete other container"
 	echo "Option> " ; read op
 	echo
 	case $op in
@@ -86,6 +95,9 @@ while test $op != 0; do
 	8)
 		docker volume prune -f;;
 
+	9)
+		echo "Name of container> " ; read name
+                docker rm -f $name;;
 	*)
 		echo "Invalid option"
 	esac

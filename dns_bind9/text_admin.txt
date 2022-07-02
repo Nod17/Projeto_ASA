@@ -1,9 +1,0 @@
-0 - Stop script
-1 - List Containers in execution
-2 - List All Containers
-3 - Stop, Restart, Start bind9 in ns1 and/or ns2 with <exec>
-4 - Delete container ns1 and/or ns2
-5 - View Logs ns1 or ns2
-6 - Inspect Container
-7 - Delete image
-8 - Delete volumes not in use
