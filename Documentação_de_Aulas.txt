@@ -1,23 +1,21 @@
-# Projeto_ASA
+Projeto da disciplina ASA - Administração de Sistemas Abertos - Curso: Tecnologia em Redes de Computadores
 
-OBS: Para quem deu um git clone anteriormente, use "git pull" antes de modificar, criar, mudar algo. Pois haver modifcações.
+- Documentação para acompanhamento dos acontecimentos em aula e ajuda aos integrantes.
+- OBS: Para quem deu um git clone anteriormente, use "git pull" antes de modificar, criar, mudar algo. Pois haver modifcações.
+- Não está documentado, desde o início, apenas a partir do dia mostrado abaixo.
 
-FINALIDADE:
-    Repositório onde vamos incluir arquivos de configuração e utilização para criação de containers com o Docker, pela disciplina ASA.
-
-
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 SOBRE A AULA DO DIA 31/05:
 
 Estou adicionando aqui um arquivo "Dockerfile" com a configuração para uma imagem que podemos usar para nosso projeto e fazer configurações de DNS com o bind9.
-
 Dicas:
+Após dar o git clone para baixar ou git pull para atualizar o repositório, faça:
+- docker build -t "nome_para_imagem" .
+- docker run --name "nome_para_container" -d -p 30053:53 "nome_da_imagem"
+- docker exec -it "nome_container" /bin/bash
+Dessa forma dá pra acessar o terminal do ubuntu/container sendo um Linux mesmo, aí a gente pode atualiza-lo e dentro do /etc vai ter o bind, onde temos que fazer as configurações
 
-- Após dar o git clone para baixar ou git pull para atualizar o repositório, faça:
-    - docker build -t "nome_para_imagem" .
-    - docker run --name "nome_para_container" -d -p 30053:53 "nome_da_imagem"
-    - docker exec -it "nome_container" /bin/bash
-    - Dessa forma dá pra acessar o terminal do ubuntu/container sendo um Linux mesmo, aí a gente pode atualiza-lo e dentro do /etc vai ter o bind, onde temos que fazer as configurações
-
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 SOBRE A AULA DO DIA 07/06/2022:
 
 - Configurar arquivos para o DNS, de acordo com o nosso domínio (ac.asa.br)
@@ -25,6 +23,7 @@ SOBRE A AULA DO DIA 07/06/2022:
 - Configurar o nosso Dockerfile para executar tudo automaticamente na hora do build, faltando apenas subir o container
 - Obs: Ainda está incompleto
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 SOBRE A AULA DO DIA 14/06/2022:
 
 - Aprimoramento de configurações dos DNS e melhor entendimento sobre o mesmo
@@ -32,6 +31,7 @@ SOBRE A AULA DO DIA 14/06/2022:
 - Tentativas de testes do DNS com outro container usando nginx para uma página HTML
 - Obs: Ainda está incompleto. Não funciona!
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 SOBRE A AULA DO DIA 21/06/2022:
 
 - Aprimoramento de configurações dos DNS e melhor entendimento sobre o mesmo
@@ -39,21 +39,20 @@ SOBRE A AULA DO DIA 21/06/2022:
 - Modificações nos arquivos e reorganização do repositório no GitHub
 - Dessa vez é possível usar de forma válida o DNS, apenas primário (único) por enquanto
 - Entre outros detalhes
-    * Comandos gerais para funcionar com basicamente qualquer vertente do nosso repositório:
+    * Comandos gerais para funcionar:
     * docker build -t "nome-para-imagem" .
     * docker run --name "nome-para-container" -d -p 0.0.0.0:53:53/udp -p 0.0.0.0:53:53/tcp --dns "IP-referente" "nome-dada-a-imagem"
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 DIA 21/06 ao 28/06/2022 ANTES DA AULA:
 
 - Criadas branchs com diferentes processos. Modificações e updates.
 - Agora temos uma automatização no momento de levantar os DNSs.
-* A problemática é que os DNSs ainda não se conversam no momento...
+- A problemática é que os DNSs ainda não se conversam no momento...
 
-
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 SOBRE A AULA DO DIA 28/06/2022:
 
 - Melhorias nos scripts de automatização
-
-**Obs: Dependendo da situação, os scripts necessitam mudar a forma do S.O. ler. O Shell tem que ficar como LF, por exemplo lá em baixo no VsCode.
-Quando der um git clone, provavelmente ele vai vir em CRLF, que é a forma de espaçamento do Windows.
-Basta modificar este parâmetro e ele deve executar, em um Linux. Eu uso WSL com a distro Debian.
+- Melhorias de configuração para subir os containers
+- Obs: Dependendo do ambiente de execução, precisasse mudar o "pulo de linha" nos arquivos de Shell. O Shell tem que ficar como LF. É possível ver lá em baixo no VsCode um campo que provavelmente tem CRLF ou LF. Quando der um git clone, ou git pull, certamente ele vai vir em CRLF, que é a forma de espaçamento do Windows e acredito que para o GitHub também, mas basta modificar este parâmetro e ele deve executar, em um Linux. Eu uso WSL no Windows, com a distro Debian.
