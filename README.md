@@ -4,6 +4,12 @@
 
 Repositório onde vamos armazenar o necessário para o projeto da disciplina ASA, como arquivos de configuração, scripts de automatização, programas etc. Tudo isso para o desenvolvimento de um serviço usando containers Docker.
 
+#### Componentes:
+Pedro Iéremis Brito de Medeiros
+Paulo Djailton dos Santos
+Ruth Celeste do Nascimento Borges
+Luan Lenonn do Nascimento Silva
+
 ###### Para obter o repositório na sua máquina:
 
 ```shell
