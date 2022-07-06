@@ -55,4 +55,13 @@ SOBRE A AULA DO DIA 28/06/2022:
 
 - Melhorias nos scripts de automatização
 - Melhorias de configuração para subir os containers
-- Obs: Dependendo do ambiente de execução, precisasse mudar o "pulo de linha" nos arquivos de Shell. O Shell tem que ficar como LF. É possível ver lá em baixo no VsCode um campo que provavelmente tem CRLF ou LF. Quando der um git clone, ou git pull, certamente ele vai vir em CRLF, que é a forma de espaçamento do Windows e acredito que para o GitHub também, mas basta modificar este parâmetro e ele deve executar, em um Linux. Eu uso WSL no Windows, com a distro Debian.
+- Obs: Dependendo do ambiente de execução, precisa mudar o "pulo de linha" nos arquivos de Shell Script. 
+    O Shell tem que ficar com o modo LF. É possível ver lá em baixo no VsCode por exemplo um campo que provavelmente tem CRLF ou LF.
+    Quando der um git clone, ou git pull, certamente ele vai ficar como CRLF, que é a forma do pulo de linha do Windows e acredito que também do Github.
+    Mas basta modificar este parâmetro e ele deve executar, em um Linux. Eu uso WSL no Windows, com a distro Debian.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SOBRE A AULA DO DIA 05/06/2022:
+
+- Aconteceu uma atividada avaliativa - ETAPA 01
+- Foram criados repositórios pelos integrantes com o nome "infra_asa".

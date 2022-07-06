@@ -20,5 +20,7 @@ zone "localhost" {
 zone "ac.asa.br" {
 	type master;
 	file "/etc/bind/db.ac.asa.br";
-	allow-transfer {0.0.0.0; };
+	allow-transfer {secondary; };
+	notify yes;
+	also-notify {secondary; };
 };
