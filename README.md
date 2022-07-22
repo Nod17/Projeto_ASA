@@ -1,50 +1,40 @@
-# Projeto_ASA
+# Projeto_ASA_IFRN  :desktop_computer:
 
---- OBS: Para nós contruibuidores, sempre dê um "git pull" antes de modificar, criar, mudar algo. Pois o outro pode ter feito modifcações antes de você.
+### Finalidade:
 
-Repositório onde vamos incluir arquivos de configuração e utilização para
-criação de containers com o Docker. Utilizaremos do git no terminal, para incluir modificações, criações, etc...
+Repositório onde vamos armazenar o necessário para o projeto da disciplina ASA, como arquivos de configuração, scripts de automatização, programas etc. Tudo isso para o desenvolvimento de um serviço usando containers Docker.
 
+Em Produção...
 
-PROPOSTA:
+#### Componentes:
 
-Queria que a gente visse direitinho como vai ser...
+- Pedro Iéremis Brito de Medeiros
+- Paulo Djailton dos Santos
+- Ruth Celeste do Nascimento Borges
+- Luan Lenonn do Nascimento Silva
 
+###### Para obter o repositório na sua máquina:
 
-SOBRE A AULA DO DIA 31/05:
+```shell
+git clone https://github.com/Nod17/Projeto_ASA.git
 
-Estou adicionando aqui um arquivo "Dockerfile" com a configuração para uma imagem que podemos usar para nosso projeto e fazer configurações de DNS com o bind9.
+cd Projeto_ASA
 
-Dicas:
+ls ou dir 
+```
 
-- Após dar o git clone ou git pull para ter este repositório, faça:
-    - docker build -t "nome_para_imagem" .
-    - docker run --name "nome_para_container" -d -p 30053:53 "nome_da_imagem"
-    - docker exec -it "nome_container" /bin/bash
+___Dicas:___
 
-    - Dessa forma dá pra acessar o temrinal do ubuntu/container sendo um Linux mesmo, aí a gente pode atualiza-lo e dentro do /etc vai ter o bind, onde temos que fazer as configurações
+1. Só é possível efetuar esta primeira funcionalidade se tiver instalado o *git* na máquina.
 
-SOBRE A AULA DO DIA 07/06/2022:
+2. Sempre que for executar um script, ou usar o *docker*, esteja na pasta principal do que deseja.
 
-- Configurar arquivos para o DNS, de acordo com o nosso domínio (ac.asa.br)
-- Usar o bind9 para isso, a imagem de acordo com o Dockerfile
-- Configurar o nosso Dockerfile para executar tudo automaticamente na hora do build, faltando apenas subir o container
-- Obs: Ainda está incompleto
+---
 
-SOBRE A AULA DO DIA 14/06/2022:
+#### DNS - BIND9:
 
-- Aprimoramento de configurações dos DNS e melhor entendimento sobre o mesmo
-- Melhor configuração do Dockerfile
-- Tentativas de testes do DNS com outro container usando nginx para uma página HTML
-- Obs: Ainda está incompleto. Não funciona!
+- Atualmente no processo do projeto, estamos usando o bind9 como servidor dns. Siga até a pasta __dns_bind9__ para visualizar o README.md especificamente sobre ele. Nosso domínio é o *ac.asa.br*, o qual está dentro do *asa.br* referente ao projeto do link a seguir: https://github.com/CostaPauloEdu/dns-bind9
 
-SOBRE A AULA DO DIA 21/06/2022:
+#### HTML - NGINX:
 
-- Aprimoramento de configurações dos DNS e melhor entendimento sobre o mesmo
-- Melhor configuração do Dockerfile
-- Modificações nos arquivos e reorganização do repositório no GitHub
-- Dessa vez é possível usar de forma válida o DNS, apenas primário (único) por enquanto
-- Entre outros detalhes
-    * Comandos gerais para funcionar com basicamente qualquer vertente do nosso repositório:
-    * docker build -t "nome-para-imagem" .
-    * docker run --name "nome-para-container" -d -p 0.0.0.0:53:53/udp -p 0.0.0.0:53:53/tcp --dns "IP-referente" "nome-dada-a-imagem"
+- No momento temos uma pasta ___html___ com a finalidade principal de usarmos para testar o dns, relacionando o IP do host hospedeiro que o subiu, com um nome dentro do domínio. Siga até ela para mais detalhes.
