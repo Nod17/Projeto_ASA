@@ -20,7 +20,15 @@ zone "localhost" {
 zone "ac.asa.br" {
 	type master;
 	file "/etc/bind/db.ac.asa.br";
-	allow-transfer {secondary; };
+	allow-transfer { secondary; };
 	notify yes;
-	also-notify {secondary; };
+	also-notify { secondary; };
+};
+
+zone "reverserede.in-addr.arpa" {
+	type master;
+	file "/etc/bind/db.reverse.ac.asa.br";
+	allow-transfer { secondary; };
+	notify yes;
+	also-notify { secondary; };
 };

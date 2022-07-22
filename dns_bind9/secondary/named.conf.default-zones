@@ -15,5 +15,11 @@ zone "localhost" {
 zone "ac.asa.br" {
 	type slave;
 	file "/etc/bind/db.ac.asa.br";
-	masters {primary; };
+	masters { primary; };
+};
+
+zone "reverserede.in-addr.arpa" {
+	type slave;
+	file "/etc/bind/db.reverse.ac.asa.br";
+	masters { primary; };
 };

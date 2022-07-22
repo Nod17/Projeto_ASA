@@ -2,7 +2,7 @@
 
 Nesta pasta está alocado os arquivos de configuração para o dns primário e secundário. Nosso domínio é __ac.asa.br__
 
-Também foram criados scripts em Shell para automatização de processos, desde o build da imagem a execução do container com Docker, a partir de um único Dockerfile. Existem 4 scrips de automatização, cada um com sua finalidade.
+Também foram criados scripts em Shell para automatização de processos, desde toda a execução dos serviço usando o container Docker até sua administração. Existem 4 scrips, cada um com sua finalidade, explicadas a seguir.
 
 ---
 
@@ -12,42 +12,50 @@ Também foram criados scripts em Shell para automatização de processos, desde 
 
 O script __*exec_service_general.sh*__ é mais útil para testes, pois ele colocará em execução 2 containers com dns, mas isso num host único, não é de boa útilidade.
 
-Ele deve ser executado passando como ``$1`` o IP do primário, ou seja, do host, e como ``$2`` o IP do secundário. Para este caso, use ou o mesmo IP, ou deixe sem parâmetro, porque dessa forma automaticamente ele assumirá o IP 127.0.0.1.
+Ele deve ser executado passando como ``$1`` o IP do primário, ou seja, do host, ``$2`` como o IP do dns secundário, ``$3`` como o número do final do IP do primário, por exemplo na situação que o IP seja 192.168.0.10, o ``$3`` terá como valor o número 10. ``$4`` seguindo a mesma lógica que o ``$3``, mas para o final do IP referente ao secundário e ``$5`` será os 3 primeiros números da rede de forma reversa. Usando o mesmo exemplo de IP dado anteriormente, seria 0.168.192 para ``$5``. É necesário passar os parâmetros corretamente, caso contrário, poderá haver problemas.
 
 Exemplos:
 
 ```shell
-./exec_service_general.sh 192.168.0.10
+./exec_service_general.sh 192.168.0.10 192.168.0.11 10 11 0.168.192
 
-./exec_service_general.sh 192.168.0.10 192.168.0.10
+./exec_service_general.sh 10.24.10.100 10.24.10.101 100 101 10.24.10
 
-./exec_service_general.sh 192.168.0.10 127.0.0.1
 ```
+
 ---
+
 #### Ambiente para host primário
 
 O script __*exec_service_primary.sh*__ será usado para execução do dns primário, onde se levantará um container para o dns.
 
-Ele deve ser executado passando como ``$1`` o IP do primário, ou seja, o IP do host, e como ``$2`` o IP do secundário, ou seja, o IP do host onde se levantará um outro container para o dns secundário.
+Ele deve ser executado seguindo a mesma lógica do __*exec_service_general.sh*__, mas neste caso ele só levantará o dns primário, ou seja, a forma ideal para se usar em uma única máquina/host.
 
-Exemplo:
+Exemplos:
 
 ```shell
-./exec_service_primary.sh 192.168.0.10 192.168.0.11
+./exec_service_general.sh 192.168.0.10 192.168.0.11 10 11 0.168.192
+
+./exec_service_general.sh 10.24.10.100 10.24.10.101 100 101 10.24.10
 ```
+
 ---
+
 #### Ambiente para host secundário
 
 O script __*exec_service_secondary.sh*__ será usado para execução do dns secundário, onde se levantará um container para o dns, que terá de fazer uma busca de dados no dns primário. Só é útil executá-lo após o primário ter sido executado.
 
-Ele deve ser executado passando como ``$1`` o IP do primário, ou seja, o IP onde foi levantado o dns primário, e como ``$2`` o IP do secundário, ou seja, o IP do host que se executará este script.
+Aqui muda um pouquinho e é mais simples a sua execução. Será da seguinte forma: Ele deve ser executado passando como ``$1`` o IP do primário, ``$2`` como o IP do dns secundário, ou seja, do host, ``$3`` será o IP da rede de forma reversa, da mesma forma citada lá em cima.
 
-Exemplo:
+Exemplos:
 
 ```shell
-./exec_service_secondary.sh 192.168.0.10 192.168.0.11
+./exec_service_general.sh 192.168.0.10 192.168.0.11 0.168.192
+
+./exec_service_general.sh 10.24.10.100 10.24.10.101 10.24.10
+
 ```
----
+
 #### Ambiente independente do host
 
 O script __*adm_service.sh*__ é útil para administração dos containers, especialmente voltado aos dos dns, ns1 e ns2. Ele traz algumas funcionalidades que agiliza principalmente nos momentos dos testes e, você pode executá-lo tanto no host do primário como no host do secunário.
@@ -74,7 +82,6 @@ _OBS:_ Ao usar o script, cuidado no momento de apagar algo, pois ele está sempr
 #### Demais dicas: :left_speech_bubble:
 
 - Caso os scripts estiverem dando algum problema de execução, pode ser apenas pelo pulo de linha. O Linux usa um padrão chamado de LF e quando direciono os Updates para o repositório, ele transforma o pulo de linha em CRFL normalmente, basta mudar isso, no VsCode por exemplo, lá em baixo é possível enxergar esta opção e mudar.
-
 
 - No Linux você pode usar o *dig* ou o *nslookup* para testar a resolução de nomes do dns, estando no terminal host hospedeiro, tendo o IP 192.168.0.10 como exemplo, faça da seguinte forma:
   
@@ -123,3 +130,5 @@ _OBS:_ Ao usar o script, cuidado no momento de apagar algo, pois ele está sempr
   ```
 
 Você também poderá usa-lo como dns pela internet, coo o IP setado na máquina, tente navegar na internet, certamente funcionará tudo ok, pois há todo um encaminhamento para a resolução de nomes.
+
+Atualmente o dns secundário está com problemas no momento de requisitar os dados do primário, está apresentando "REFUSED" nos Logs. No momoento estamos tentando averiguar e resolver a situação...
