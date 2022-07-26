@@ -8,8 +8,10 @@ $TTL	604800
 			2419200		; Expire
 			 604800 )	; Negative Cache TTL
 ;
+@	IN	NS	ac.asa.br.
 @	IN	NS	ns1.ac.asa.br.
 @	IN	NS	ns2.ac.asa.br.
 
+reverse1	IN	PTR	ac.asa.br
 reverse1	IN	PTR	ns1
 reverse2	IN	PTR	ns2

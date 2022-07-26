@@ -3,26 +3,26 @@
 if [ -z $1 ];then
 	echo "No IP setting for primary dns"
 	echo "No IP setting for secondary dns"
-	echo "No setting final value for reverse zone primary"
-	echo "No setting final value for reverse zone secondary"
+	echo "No setting final value of IP primary, for reverse zone primary"
+	echo "No setting final value of IP secondary, for reverse zone secondary"
 	echo "No setting value for reverse network"
 else
 	echo "Ok - 1"
 	if [ -z $2 ];then
 		echo "No IP setting for secondary dns"
-		echo "No setting final value for reverse zone primary"
-		echo "No setting final value for reverse zone secondary"
+		echo "No setting final value of IP primary, for reverse zone primary"
+		echo "No setting final value of IP secondary, for reverse zone secondary"
 		echo "No setting value for reverse network"
 	else
 		echo "Ok - 2"
 		if [ -z $3 ];then
-			echo "No setting final value for reverse zone primary"
-			echo "No setting final value for reverse zone secondary"
+			echo "No setting final value of IP primary, for reverse zone primary"
+			echo "No setting final value of IP secondary, for reverse zone secondary"
 			echo "No setting value for reverse network"
 		else
 			echo "Ok - 3"
 			if [ -z $4 ];then
-				echo "No setting final value for reverse zone secondary"
+				echo "No setting final value of IP secondary, for reverse zone secondary"
 				echo "No setting value for reverse network"
 			else
 				echo "Ok - 4"
