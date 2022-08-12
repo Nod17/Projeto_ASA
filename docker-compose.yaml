@@ -1,0 +1,24 @@
+version: "3.9"
+services:
+  dns:
+    build: ./dns
+    container_name: ns1
+    ports:
+      - "53:53/udp"
+      - "53:53/tcp"
+    volumes:
+      - ./dns/primary:/etc/bind
+  server_mail:
+    build: ./server_mails
+    container_name: servermail
+    ports:
+      - "25:25/tcp"
+      - "587:587/tcp"
+      - "143:143/tcp"
+  webmail:
+    build: ./webmail
+    container_name: webmailserver
+    ports:
+      - "80:80"
+    volumes:
+      - ./webmail/rainloop:/var/www/html/rainloop
