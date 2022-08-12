@@ -1,0 +1,60 @@
+version: '3'
+services:
+    
+  web01:
+    build:
+      context: ./web1
+      dockerfile: Dockerfile
+    image: web01
+    container_name: web01
+    restart: always
+    tty: true
+    networks:
+      - ac-network
+
+  web02:
+    build:
+      context: ./web2
+      dockerfile: Dockerfile
+    image: web02
+    container_name: web02
+    restart: always
+    tty: true
+    networks:
+      - ac-network
+      
+  proxy:
+    build:
+      context: ./proxy
+      dockerfile: Dockerfile
+    image: proxy
+    container_name: proxy
+    restart: always
+    tty: true
+    ports:
+      - "80:80"
+    depends_on:
+      - web01
+      - web02
+    networks:
+      - ac-network
+
+  dns:
+    build:
+      context: ./dns
+      dockerfile: Dockerfile
+    image: dns
+    container_name: dns
+    restart: always
+    tty: true
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+    volumes:
+      - ./dns/etc:/etc/bind
+    networks:
+      - ac-network
+
+networks:
+  ac-network:
+    driver: bridge
