@@ -4,7 +4,7 @@ echo "Altere no arquivo que abrirá o que tem 'SUAREDELOCAL' pela sua rede local
 cd server_mails/smtp_postfix
 nano main.cf
 
-echo "Seu IP> " ; read ip
+echo "Digite IP do Host> " ; read ip
 pos1=$(echo $ip | cut -d "." -f 1)
 pos2=$(echo $ip | cut -d "." -f 2)
 pos3=$(echo $ip | cut -d "." -f 3)
@@ -32,7 +32,7 @@ docker exec servermail /etc/init.d/dovecot restart
 
 docker exec webmailserver ./process_02.sh
 
-echo "nameserver $ip" > dns/resolv_local.conf
-docker cp dns/resolv_local.conf ns1:.
-docker cp dns/process_04.sh ns1:.
-docker exec ns1 ./process_04.sh
+#echo "nameserver $ip" > dns/resolv_local.conf
+#docker cp dns/resolv_local.conf ns1:.
+#docker cp dns/process_04.sh ns1:.
+#docker exec ns1 ./process_04.sh

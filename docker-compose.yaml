@@ -2,6 +2,7 @@ version: "3.9"
 services:
   dns:
     build: ./dns
+    image: dns
     container_name: ns1
     ports:
       - "53:53/udp"
@@ -10,6 +11,7 @@ services:
       - ./dns/primary:/etc/bind
   server_mail:
     build: ./server_mails
+    image: server-mails
     container_name: servermail
     ports:
       - "25:25/tcp"
@@ -17,6 +19,7 @@ services:
       - "143:143/tcp"
   webmail:
     build: ./webmail
+    image: webmail
     container_name: webmailserver
     ports:
       - "80:80"
