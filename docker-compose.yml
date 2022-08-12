@@ -1,10 +1,9 @@
-version: '3'
+version: '3.9'
 services:
     
   web01:
     build:
-      context: ./web1
-      dockerfile: Dockerfile
+      context: ./html
     image: web01
     container_name: web01
     restart: always
@@ -12,21 +11,23 @@ services:
     networks:
       - ac-network
 
-  web02:
+  webmail:
     build:
-      context: ./web2
-      dockerfile: Dockerfile
-    image: web02
-    container_name: web02
+      context: ./webmail
+    image: webmail
+    container_name: webmail
     restart: always
     tty: true
+    volumes:
+      - ./webmail/rainloop:/var/www/html/rainloop
+    depends_on:
+      - servermails
     networks:
       - ac-network
-      
+
   proxy:
     build:
       context: ./proxy
-      dockerfile: Dockerfile
     image: proxy
     container_name: proxy
     restart: always
@@ -35,23 +36,32 @@ services:
       - "80:80"
     depends_on:
       - web01
-      - web02
+      - webmail
     networks:
       - ac-network
 
   dns:
-    build:
-      context: ./dns
-      dockerfile: Dockerfile
+    build: ./dns
     image: dns
-    container_name: dns
+    container_name: ns1
     restart: always
     tty: true
     ports:
-      - "53:53/tcp"
       - "53:53/udp"
+      - "53:53/tcp"
     volumes:
-      - ./dns/etc:/etc/bind
+      - ./dns/primary:/etc/bind
+    networks:
+      - ac-network
+
+  server_mail:
+    build: ./server_mails
+    image: servermails
+    container_name: servermails
+    ports:
+      - "25:25/tcp"
+      - "587:587/tcp"
+      - "143:143/tcp"
     networks:
       - ac-network
 

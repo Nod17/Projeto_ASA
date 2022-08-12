@@ -27,10 +27,10 @@ sed -i "s/reverserede/$res/" named.conf.default-zones
 cd ../..
 docker-compose up -d
 
-docker exec servermail /etc/init.d/postfix restart
-docker exec servermail /etc/init.d/dovecot restart
+docker exec servermails /etc/init.d/postfix restart
+docker exec servermails /etc/init.d/dovecot restart
 
-docker exec webmailserver ./process_02.sh
+docker exec webmail ./process_02.sh
 
 #echo "nameserver $ip" > dns/resolv_local.conf
 #docker cp dns/resolv_local.conf ns1:.
