@@ -31,8 +31,3 @@ docker exec servermails /etc/init.d/postfix restart
 docker exec servermails /etc/init.d/dovecot restart
 
 docker exec webmail ./process_02.sh
-
-#echo "nameserver $ip" > dns/resolv_local.conf
-#docker cp dns/resolv_local.conf ns1:.
-#docker cp dns/process_04.sh ns1:.
-#docker exec ns1 ./process_04.sh

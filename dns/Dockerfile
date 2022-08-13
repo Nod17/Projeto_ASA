@@ -11,4 +11,6 @@ RUN apt-get update \
 
 RUN apt-get upgrade -y
 
+EXPOSE 53
+
 CMD /usr/sbin/named ; tail -F /dev/null

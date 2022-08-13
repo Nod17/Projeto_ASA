@@ -12,6 +12,4 @@ COPY process_02.sh .
 COPY process_03.sh .
 RUN ./process_03.sh
 
-EXPOSE 80
-
 CMD tail -F /dev/null

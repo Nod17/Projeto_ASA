@@ -25,5 +25,6 @@ COPY /smtp_postfix/main.cf /etc/postfix/main.cf
 
 EXPOSE 25
 EXPOSE 143
+EXPOSE 587
 
 CMD tail -F /dev/null
