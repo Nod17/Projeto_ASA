@@ -25,7 +25,7 @@ sed -i "s/reverse1/$rev/" db.reverse.ac.asa.br
 sed -i "s/reverserede/$res/" named.conf.default-zones
 
 cd ../..
-docker-compose up -d
+docker-compose up -d --build
 
 docker exec servermails /etc/init.d/postfix restart
 docker exec servermails /etc/init.d/dovecot restart
