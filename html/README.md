@@ -1,17 +1,5 @@
 ## HTML - NGINX  :bookmark_tabs:
 
-Para esta pasta há apenas um Dockerfile, um simples html e um simples css.
+Para esta pasta há apenas um Dockerfile, um simples html e um simples css. O qual está copiando todo o conteúdo da pasta **web01** para dentro do container, usando a imagem da nginx.
 
-Siga os passos destacados abaixo e suba o container:
-
-```shell
-docker build -t nx .
-
-docker run -d -p 80:80 nx
-```
-
-E pronto, com isso você já subiu um container a partir de uma determinada imagem construída com o nome _nx_.
-
-Ele estará executando na porta 80, ou seja, a padrão do navegador para o protocolo HTTP.
-
-É possível acessa-lo digitando _localhost_ no navegador do host hospedeiro, ou _127.0.0.1_ ou o _IP_ do mesmo.
+Agora com o proxy na estrutura não é possível acessa-lo diretamente, irá acessa-lo a partir do proxy. Podendo ser a partir do IP do Host, ou se tiver apontando para o dns da estrutura de serviços, será possível acessa-lo a partir do domínio, basta digitar no navegor **www.ac.asa.br**, por exemplo, dentro do nosso contexto.
