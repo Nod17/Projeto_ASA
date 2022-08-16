@@ -12,7 +12,7 @@ services:
       - ac-network
 
   servermails:
-    build: ./server_mails
+    build: ./server-mails
     image: servermails
     container_name: servermails
     ports:

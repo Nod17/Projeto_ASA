@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Altere no arquivo que abrirá o que tem 'SUAREDELOCAL' pela sua rede local com o barramento de máscara <Tecle Enter para prosseguir>" ; read
-cd server_mails/smtp_postfix
+cd server-mails/smtp_postfix
 nano main.cf
 
 echo "Digite IP do Host> " ; read ip
